@@ -32,7 +32,7 @@ def load_data(PG_URL):
     return data
 
 
-stock_symbols = ['IBM', 'YRD', 'RGTI']
+stock_symbols = ['SYMB1', 'SYMB2', 'SYMB3']
 
 def main(PG_URL):
     st.header("Earnings Per Stock Raw Data")
