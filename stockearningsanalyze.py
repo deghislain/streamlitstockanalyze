@@ -32,7 +32,7 @@ def load_data(PG_URL):
     return data
 
 
-stock_symbols = ['SYMB1', 'SYMB2', 'SYMB3']
+stock_symbols = ['SYM1', 'SYM2','SYM3']
 
 def main(PG_URL):
     st.header("Earnings Per Stock Raw Data")
@@ -42,7 +42,7 @@ def main(PG_URL):
     select = st.selectbox('Stock Symbols', stock_symbols)
     for s in stock_symbols:
         if select == s:
-            st.header("IBM Earnings Per Stock Within The Last 12 Months")
+            st.header("{0}".format(s) + " Earnings Per Stock Within The Last 12 Months")
             filtered_data = raw_data.query("stock_symbol ==\'{0}\'".format(select))[
                                 ['stock_symbol', 'Fiscal Date', 'Earning Per Stock']].sort_values(
                 by=['Fiscal Date'], ascending=False).dropna(how='any')[:12]
